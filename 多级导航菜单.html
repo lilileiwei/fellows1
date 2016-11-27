@@ -8,38 +8,65 @@
             margin: 0;
             padding: 0;
         }
-        ul ol{
+        ul, ol{
             list-style: none;
         }
-        li{
+        a{
             text-decoration: none;
         }
+        #menu .main-menu{
+            width: 120px;
+            height: 30px;
+            line-height: 30px;
+            background: #cccccc;
+            display: block;
+
+        }
+        #menu li{
+            float: left;
+            margin-right: 5px;
+
+        }
+        #menu .sub-menu  li{
+            float: none;
+            border-bottom: 1px dotted #000;
+            height: 25px;
+            line-height: 25px;
+
+        }
+        #menu .sub-menu {
+            background: #eee;
+            display: none;
+        }
+
+
+
 
 
     </style>
 </head>
 <body>
 <ul id="menu"   >
-    <li>
-        <a href="#" >link1</a>
-        <ul>
+    <li >
+        <a href="#" class="main-menu">link1</a>
+        <ul class="sub-menu" >
             <li><a href="#" >sublink1</a></li>
             <li><a href="#" >sublink2</a></li>
             <li><a href="#" >sublink3</a></li>
         </ul>
     </li>
-    <li>
-        <a href="#" >link2</a>
-        <ul>
-        <li><a href="#" >sublink1</a></li>
-        <li><a href="#" >sublink2</a></li>
-        <li><a href="#" >sublink3</a></li>
-    </ul>
+    <li >
+        <a href="#" class="main-menu">link2</a>
+        <ul class="sub-menu">
+            <li><a href="#" >sublink1</a></li>
+            <li><a href="#" >sublink2</a></li>
+            <li><a href="#" >sublink3</a></li>
+        </ul>
 
     </li>
-    <li>
-        <a href="#" >link3</a>
-        <ul>
+    <li >
+        <a href="#" class="main-menu">link3</a>
+        <ul class="sub-menu">
             <li><a href="#">sublink1</a></li>
             <li><a href="#" >sublink2</a></li>
             <li><a href="#" >sublink3</a></li>
@@ -47,6 +74,21 @@
     </li>
 </ul>
 
+<script>
+    var oMenu =document.getElementById ('menu');
+    var ali=oMenu.children;
+    for (var i=0;i<ali.length ;i++)
+    {
+        ali[i].onmouseover =function (){
+            this.children [1].style.display='block';
 
+    };
+        ali[i].onmouseout =function (){
+            this.children [1].style.display='none';
+
+        };
+    }
+
+</script>
 </body>
 </html>
