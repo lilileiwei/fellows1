@@ -62,9 +62,17 @@
     var aSubMenu=omenu.getElementsByTagName("ul");
     for(var i=0;i<aH3.length ;i++){
         aH3 [i].index =i;
+        aH3 [i].bFlag =false;
         aH3 [i].onclick =function(){
-            aSubMenu[this.index].style.display="block";
-        };
+            if(this.bFlag ){
+                aSubMenu[this.index].style.display="none";
+
+            }else{
+                aSubMenu[this.index].style.display="block";
+
+            }
+             this.bFlag =!this.bFlag ;
+    };
 
     }
 </script>
