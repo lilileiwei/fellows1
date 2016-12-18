@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>旋转的立方体2</title>
+    <title>旋转的立方体</title>
     <style>
         *{
             margin: 0;
@@ -11,7 +11,7 @@
         body{
             background: #000;
             perspective: 800px;
-            /*perspective-origin: 50% -100%;*/
+            /*perspective-origin: 100% 100px;*/
         }
         #container {
             width: 200px;
@@ -20,7 +20,7 @@
             margin: 200px auto;
             transform-style: preserve-3d;
             animation: rotate 2s linear infinite;
-            position: relative;
+
 
         }
         @keyframes rotate {
@@ -41,31 +41,25 @@
             text-align: center;
             line-height: 200px;
             font-size: 60px;
-            position: absolute;
-            left: 0;
-            top: 0;
 
         }
         .one {
             transform: rotateY(-180deg) translateZ(100px);
         }
         .two {
-            transform: rotateX(90deg) translateZ(100px);
-
-
+            transform: rotateX(90deg) translateZ(306px);
         }
         .three {
-            transform:translateZ(100px);
+            transform: translateY(-410px) translateZ(100px);
         }
         .four {
-            transform: rotateX(-90deg) translateZ(100px);
-
+            transform: rotateX(-90deg) translateZ(-514px);
         }
         .five {
-            transform:  rotateY(-90deg) translateZ(100px);
+            transform: translateY(-816px) translateX(-100px) rotateY(-90deg);
         }
         .six {
-            transform:  rotateY(90deg)  translateZ(100px);
+            transform: translateY(-1020px) translateX(100px) rotateY(90deg);
         }
     </style>
 </head>
