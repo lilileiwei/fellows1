@@ -2,8 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>轮播图</title>
-    <style>
+    <title>轮播图</title><style>
         *{
             margin: 0;
             padding: 0;
@@ -105,11 +104,8 @@
             aLi [i].index =i;
             aLi [i].onmouseover =function() {
                 changImag (this.index );
-
             };
-
         }
-
         oPrev.onclick =function (){
             iNow --;
             iNow =(iNow +aLi.length )%aLi.length ;
