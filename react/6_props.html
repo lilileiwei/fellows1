@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>props</title>
+</head>
+<body>
+<div id="app"></div>
+<script src="react-15.3.1/build/react.js"></script>
+<script src="react-15.3.1/build/react-dom.js"></script>
+<script src="react-15.3.1/browser.js"></script>
+<script type="text/babel">
+    var SubComponent = React.createClass({
+        getDefaultProps:function(){
+            return{
+                arr:[]
+            }
+        },
+        render:function(){
+            var msg=[];
+            this.props.arr.forEach(function(elem,index){
+               msg.push(<div key={index}>{elem}</div>);//是将div元素push到msg数组当中
+            });
+            return(
+                    <div>{msg}</div>
+            );
+        }
+    });
+    var Component = React.createClass({
+        render:function(){
+            var text="thanks";
+            var arr=[1,2,3];
+            return(
+                    <div>
+                        <SubComponent thk={text} arr={arr}/>
+                        <h1>you are welcome!</h1>
+                    </div>
+
+            );
+        }
+    });
+    ReactDOM.render(
+            <Component/>,
+        document.getElementById("app")
+    );
+
+</script>
+
+</body>
+</html>

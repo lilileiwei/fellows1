@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>hello world</title>
+    <style>
+        .aa{
+            background: #f00;
+        }
+    </style>
+
+
+</head>
+<body>
+    <script src="react-15.3.1/build/react.js"></script>
+    <script src="react-15.3.1/build/react-dom.js"></script>
+    <script src="react-15.3.1/browser.js"></script>
+    <div id="app"></div>
+    <script>
+        ReactDOM.render(
+                React.createElement ("h1",{className:"aa"},"hello world !",
+                        React.createElement("p",null,"你好，世界！")),
+
+                document.getElementById('app')
+        );
+    </script>
+
+
+
+</body>
+</html>
