@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>折叠菜单3</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        #container{
+            width: 300px;
+            height: 150px;
+            margin: 100px;
+            border: 1px solid #ccc;
+        }
+        #menu li{
+            width: 80px;
+            height: 30px;
+            background: #ccc;
+            float: left;
+            margin-right: 17px;
+            text-align: center;
+            line-height: 30px;
+        }
+        #menu .selected{
+            background: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <ul id="menu">
+        <li class="selected">js</li>
+        <li>css</li>
+        <li>html</li>
+    </ul>
+    <div id="content">
+
+    </div>
+</div>
+<script>
+    var data=[1,22,333];
+    var oMenu = document.getElementById('menu');
+    var aLi = oMenu.children;
+    var oContent = document.getElementById('content');
+    oContent.innerHTML=data[0];
+
+    for(var i=0;i<aLi.length;i++){
+        aLi[i].index = i;
+        aLi[i].onclick=function(){
+            for(var j=0;j<aLi.length;j++){
+                aLi[j].className='';
+            }
+            this.className='selected';
+            oContent.innerHTML=data[this.index];
+        };
+        aLi[i].onselectstart = function(){
+            return false;
+        }//阻止默认行为：有时候快速双击是会触发浏览器的默认行为会被选中。
+    }
+
+</script>
+
+</body>
+</html>
