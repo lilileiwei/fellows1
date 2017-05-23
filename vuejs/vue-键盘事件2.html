@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>键盘事件</title>
+</head>
+<body>
+<div id="box">
+    <input type="text" @keydown.enter="show()">
+    <input type="text" @keydown.up="show2()">
+    <input type="text" @keydown.left="show3()">
+</div>
+<script src="assets/js/vue.min.js"></script>
+<script>
+    new Vue({
+        el:"#box",
+        data:{
+
+        },
+        methods:{
+            show:function () {
+                alert(1);
+            },
+            show2:function () {
+                alert(2);
+            },
+            show3:function () {
+                alert(3);
+            }
+
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue2</title>
+    <style>
+        .div1{
+            width: 100px;
+            height: 100px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <button @click="fn">click</button>
+    <div v-bind:class="{div1:isdiv}"></div>
+</div>
+<script src="vue.min.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            isdiv:true
+        },
+        methods:{
+            fn:function(){
+                this.isdiv=! this.isdiv;
+            }
+        }
+
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue3</title>
+</head>
+<body>
+<div id="app">
+    {{firstname}},{{lastname}}={{fullname}}
+</div>
+<script src="vue.min.js"></script>
+<script>
+    var vm=new Vue({
+        el:"#app",
+        data:{
+            firstname:"zhang",
+            lastname:"san"
+        },
+        computed:{
+            fullname:{
+                get:function(){
+                    return this.firstname+''+this.lastname;
+                },
+                set:function(newVal){
+                    var arr =newVal.split('');
+                    this.firstname = arr[0];
+                    this.lastname = arr[1];
+                }
+            }
+        },
+        methods:{},
+        watch:{
+
+        }
+    });
+</script>
+</body>
+</html>

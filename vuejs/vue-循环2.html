@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+</head>
+<body>
+<div id="box">
+
+    <div v-for="(k,v) in json">
+        {{k}} {{v}}
+    </div>
+
+</div>
+<script src="vue.min.js"></script>
+<script>
+    var vm=new Vue({
+        el:"#box",
+        data:{
+           json:{a:'banana',b:'pear',c:'apple'}
+
+        }
+    });
+</script>
+</body>
+</html>

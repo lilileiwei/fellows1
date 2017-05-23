@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="text" id="aa" value="msg">
+    <p id="bb">{{msg}}</p>
+<script>
+    var vm ={};
+    Object.defineProperty(vm,'msg',{
+        set:function(val){
+           document.getElementById('aa').value=val;
+           document.getElementById('bb').innerHTML=val;
+        }
+    });
+    document.getElementById('aa').onkeyup=function(){
+        vm.msg=this.value;
+    };
+    vm.msg=123;
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+</head>
+<body>
+<div id="box">
+    <input type="text" v-model="msg">
+    <br>
+    {{msg}}
+    <hr>
+    <div v-for="value in msg1">
+        {{value}}
+    </div>
+
+</div>
+<script src="vue.min.js"></script>
+<script>
+    var vm=new Vue({
+        el:"#box",
+        data:{
+            msg:"welcome vue",
+            msg1:['banana','apple','pear']
+        }
+    });
+</script>
+</body>
+</html>

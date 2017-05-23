@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+</head>
+<body>
+<div id="box">
+    <input type="text" v-model="msg">
+    <br>
+    {{msg}}
+    <hr>
+    <input type="button" value="按钮" v-on:click="add()">
+    <div v-for="value in arr">
+        {{value}}
+    </div>
+
+
+</div>
+<script src="vue.min.js"></script>
+<script>
+    var vm=new Vue({
+        el:"#box",
+        data:{
+            msg:"welcome vue",
+            arr:['banana','apple','pear']
+        },
+        methods:{
+            add:function () {
+                this.arr.push('tomato');
+            }
+        }
+    });
+</script>
+</body>
+</html>

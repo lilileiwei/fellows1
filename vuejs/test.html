@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+    <style>
+        .div1{
+            width: 100px;
+            height: 100px;
+            background: #ffff00;
+
+        }
+    </style>
+
+</head>
+<body>
+<div id="app">
+    <button v-on:click=fn">click</button>
+    <div v-bind:class="{div1:div}">{{msg}}</div>
+
+</div>
+<script src="vue.min.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            msg:"aa"
+        },
+        methods:{
+            fn:function () {
+
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

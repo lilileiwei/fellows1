@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>默认行为</title>
+</head>
+<body>
+<div id="box">
+    <div>
+        <input type="button" value="按钮" @contextmenu="show($event)">
+        <!--contentmenu指的是右键，这样会出来菜单框-->
+    </div>
+</div>
+<script src="assets/js/vue.min.js"></script>
+<script>
+    new Vue({
+        el:"#box",
+        data:{
+
+        },
+        methods:{
+            show:function (ev) {
+                ev.preventDefault();
+                alert(1);
+            }
+
+        }
+    });
+</script>
+</body>
+</html>
