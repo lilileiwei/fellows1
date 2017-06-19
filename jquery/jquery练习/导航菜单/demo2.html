@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul, ol{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .main{
+            height: 30px;
+            float: left;
+        }
+        .main-link{
+            display: block;
+            width: 120px;
+            text-indent: 20px;
+            line-height: 30px;
+            background: #ccc;
+            background-image: url('imgs/down.gif');
+            background-repeat: no-repeat;
+            background-position: 5px;
+            color: #000;
+        }
+        .main ul{
+            background: #888;
+            display: none;
+        }
+
+
+    </style>
+</head>
+<body>
+<script src="../../jquery-1.12.4.js " ></script>
+
+<ul>
+    <li class="main">
+        <a href="#" class="main-link" >菜单项1</a>
+        <ul >
+            <li><a href="#">子菜单11</a></li>
+            <li><a href="#">子菜单12</a></li>
+        </ul>
+    </li>
+    <li class="main">
+        <a href="#" class="main-link">菜单项2</a>
+        <ul >
+            <li><a href="#">子菜单21</a></li>
+            <li><a href="#">子菜单22</a></li>
+        </ul>
+    </li>
+    <li class="main" >
+        <a href="#" class="main-link">菜单项3</a>
+        <ul>
+            <li><a href="#">子菜单31</a></li>
+            <li><a href="#">子菜单32</a></li>
+        </ul>
+    </li>
+</ul>
+<script>
+    $(function () {
+        $('.main').hover(function () {
+            $(this).find('.main-link').css('background-img','url("img/down.gif")').end().children('ul').slideDown();
+        },function () {
+            $(this).find('.main-link').css('background-img','url("img/up.gif")').end().children('ul').slideUp();
+        });
+    })
+</script>
+
+
+</body>
+</html>
