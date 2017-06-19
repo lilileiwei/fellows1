@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#container{
+    margin: 20px;
+}
+ul{
+    list-style: none;
+    width: 200px;
+    height: 25px;
+    border: 1px solid #eee;
+}
+#tab li{
+    float: left;
+    width: 15px;
+    height: 15px;
+    margin: 5px;
+    background: url("../theme.gif") no-repeat;
+}
+.news{
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background: #999999 no-repeat;
+    color: #ffffff;
+    margin-top: 30px;
+}
+.skin0{
+    background:#999;
+}
+.skin1{
+    background:#AFD400;
+}
+.skin2{
+    background:#FBA60A;
+}
+.skin3{
+    background:#08BECE;
+}
+.skin4{
+    background:#E31559;
+}
+.skin5{
+    background:#BB3BD9;
+}
+
