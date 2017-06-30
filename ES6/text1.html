@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>es6</title>
+</head>
+<body>
+<ul>
+	<li>111</li>
+	<li>222</li>
+	<li>333</li>
+</ul>
+<script>
+	// var a=10;
+	// console.log(a);
+	// var a=10;
+	// let a=10;
+	// for(let i=0;i<5;i++){
+	// 	console.log(i);
+	// }
+	// { let i=10;}
+	// console.log(i);
+	// let a=10;
+	// let a=20;
+	// console.log(a);
+	// var a=5;
+	// function fn(){
+	// 	console.log(a);
+	// 	let a=10;
+	// }
+	// fn();
+	var aLi=document.getElementsByTagName('li');
+	for(let i=0;i<aLi.length;i++){
+		aLi[i].onclick=function(){
+			console.log(i);
+		}
+	}
+</script>
+
+</body>
+</html>

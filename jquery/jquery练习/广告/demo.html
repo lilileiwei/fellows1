@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>广告轮播</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        #container{
+            margin: 100px;
+            width: 400px;
+        }
+        ul li{
+            float: left;
+            background: #ccc;
+            width: 100px;
+            text-align: center;
+        }
+        ul li.selected{
+            background: #999;
+            color: #fff;
+        }
+        img{
+            width: 400px;
+            display: none;
+        }
+        img.selected{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <ul>
+        <li class="selected">儿童</li>
+        <li>郁金香</li>
+        <li>闪烁</li>
+        <li>湖面</li>
+
+    </ul>
+    <img src="img/1.jpg" alt="儿童" class="selected">
+    <img src="img/2.jpg" alt="郁金香">
+    <img src="img/3.jpg" alt="闪烁">
+    <img src="img/4.jpg" alt="湖面">
+
+    <!--<div class="main"><img src="img/4.jpg" alt="湖面"></div>-->
+</div>
+<script src="../../jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        var index =0;
+        $('ul li').on('click',function () {
+            $(this).addClass('selected').siblings('li').removeClass('selected');
+            $('img').eq($(this).index()).show().siblings('img').hide();
+            index =$(this).index();
+        });
+        function run() {
+            var timer = setInterval(function () {
+                index++;
+                index = index % 4;
+                $('li').eq(index).trigger('click');
+            },1000);
+        }
+        run();
+        $('#container').hover(function () {
+            clearInterval(timer);
+        },function () {
+            run();
+        });
+    });
+
+</script>
+</body>
+</html>

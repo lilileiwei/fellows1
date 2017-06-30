@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>class</title>
+</head>
+<body>
+	<script>
+	// 	function Person(){
+			
+	// }
+
+	// 	Person.prototype.name={
+	// 		first:"li",
+	// 		last:"si"
+	// 	}
+	// 	var person1=new Person();
+	// 	console.log(person1.name);
+	// 	var person2=new Person();
+	// 	console.log(person2.name);
+
+	// 	person2.name.first="zhang"
+	// 	console.log(person1.name);
+	// 	console.log(person2.name);
+	class User{
+		constructor(name){
+			this.name=name;
+		}
+		say(){
+			console.log(this.name);
+		}
+	}
+	var u1 =new User('zhangsan');
+	u1.say();
+	var u2=new User('lisi');
+	u2.say();
+
+	class Son extends User{
+		constructor(name,age){
+			super(name);
+			this.age=age;
+		}
+		static eat(){
+			console.log('eating');
+		}
+	}
+	// var s1=new Son('lili',18);
+	// s1.eat();
+	// s1.say();
+	Son.eat();
+	Son.say('lili',12);
+	</script>
+</body>
+</html>

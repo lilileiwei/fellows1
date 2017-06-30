@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>array</title>
+</head>
+<body>
+<ul>
+	<li>111</li>
+	<li>222</li>
+	<li>333</li>
+</ul>
+<script>
+	// var arr=new Array(3);
+	// var arr=Array.of(3);
+	// console.log(arr);
+	// var obj={
+	// 	0:'aa',
+	// 	1:'bb',
+	// 	length:1
+	// }
+	// console.log(Array.from(obj));
+	// var aLi=document.getElementsByTagName('li');
+	// console.log(Array.from(aLi));
+	// var arr=['a','b','c','d','e','f'];
+	// arr.copyWithin(2,3,5);
+	// console.log(arr);
+	// ["a", "b", "d", "e", "e", "f"]
+	// var arr=['a','b','c','d','e','f'];
+	// arr.fill(10,3,5);
+	// console.log(arr);
+	// arr.splice(2,2,'z','y');
+	// console.log(arr);
+	var arr=[1,2,3,4,5,6,7]
+	var val=arr.findIndex(function(val,index,aa){
+		index++;
+		return index>2;
+	});
+	console.log(val);
+</script>
+	
+</body>
+</html>
