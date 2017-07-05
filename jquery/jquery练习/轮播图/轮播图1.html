@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        #main{
+            display: -webkit-box;
+            margin-top: 100px;
+        }
+        #container{
+            -webkit-flex: 1;
+            position: relative;
+            width: 500px;
+            height: 250px;
+        }
+        #tab{
+            position: absolute;
+            right: 5px;
+            bottom: 5px;
+        }
+        #tab li{
+            float: left;
+            width: 15px;
+            height: 15px;
+            text-align: center;
+            line-height: 15px;
+            margin-right: 5px;
+            background: #ccc;
+            color: #fff;
+            border-radius: 50%;
+        }
+        #tab li.selected{
+            background: orange;
+        }
+        .img img{
+            width: 500px;
+           display: none;
+        }
+        .img img.selected{
+            display: block;
+        }
+        #prev{
+            -webkit-box-flex: 1;
+            text-align: center;
+            transform: translateY(100px);
+        }
+        #next{
+            -webkit-box-flex: 1;
+            text-align: center;
+            transform: translateY(100px);
+        }
+        #main span{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            font-size: 30px;
+            text-align: center;
+            line-height: 30px;
+
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <div id="prev"><span> < </span></div>
+    <div id="container">
+        <ul id="tab">
+            <li class="selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div class="img">
+            <img src="img/1.jpg" alt="" style="z-index: 4" class="selected" >
+            <img src="img/2.jpg" alt="" style="z-index: 3" >
+            <img src="img/3.jpg" alt="" style="z-index: 2" >
+            <img src="img/4.jpg" alt="" style="z-index: 1" >
+        </div>
+    </div>
+    <div id="next"><span> > </span></div>
+</div>
+<script src="../../jquery-1.12.4.js"></script>
+<script>
+    $(function (){
+        $('#tab li').on('mouseover',function () {
+            $(this).addClass('selected').siblings('li').removeClass('selected');
+            $('.img img').eq($(this).index()).show().siblings('img').hide();
+            
+        });
+        var iNow=0;
+        $('#prev').on('click',function () {
+            iNow--;
+            iNow =(iNow+4)%4;
+            $('#tab li').eq(iNow).addClass('selected').siblings('li').removeClass('selected');
+            $('.img img').eq(iNow).show().siblings('img').hide();
+
+        });
+        $('#next').on('click',function () {
+            iNow++;
+            iNow = iNow%4;
+            $('#tab li').eq(iNow).addClass('selected').siblings('li').removeClass('selected');
+            $('.img img').eq(iNow).show().siblings('img').hide();
+
+        })
+
+        
+    });
+</script>
+
+</body>
+</html>

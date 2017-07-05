@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无缝滚动</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        #container{
+            margin: 100px;
+            position: relative;
+            width: 500px;
+            height: 250px;
+        }
+        #tab{
+            position: absolute;
+            right: 5px;
+            bottom: 5px;
+        }
+        #tab li{
+            float: left;
+            width: 15px;
+            height: 15px;
+            text-align: center;
+            line-height: 15px;
+            margin-right: 5px;
+            background: #ccc;
+            color: #fff;
+            border-radius: 50%;
+        }
+        #tab li.selected{
+            background: orange;
+        }
+        .img img{
+            width: 500px;
+            display: none;
+        }
+        .img img.selected{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+        <ul id="tab">
+            <li class="selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div class="img">
+            <img src="img/1.jpg" alt="" style="z-index: 4" class="selected" >
+            <img src="img/2.jpg" alt="" style="z-index: 3" >
+            <img src="img/3.jpg" alt="" style="z-index: 2" >
+            <img src="img/4.jpg" alt="" style="z-index: 1" >
+        </div>
+    </div>
+
+<script src="../../jquery-1.12.4.js"></script>
+<script>
+    $(function (){
+        var index =0;
+        $('#tab li').on('mouseover',function () {
+            $(this).addClass('selected').siblings('li').removeClass('selected');
+            $('.img img').eq($(this).index()).show().siblings('img').hide();
+            index =$(this).index();
+        });
+        function run() {
+            var timer=setInterval(function () {
+                index++;
+                index=index%4;
+                $('#tab li').eq(index).trigger('mouseover');
+            },1000)
+        }
+        run();
+        $('#container').hover(function () {
+            clearInterval(timer);
+        })
+    });
+</script>
+
+</body>
+</html>
