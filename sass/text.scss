@@ -1,0 +1,46 @@
+$color :#eee;
+$color:#000 !default;
+$scl:nav;
+body{
+  background: $color;
+  #head{
+    width: 200px;
+    color:$color
+  }
+  .#{$scl}{
+    width: 200px;
+  }
+  a{
+    color: $color;
+    &:hover{
+      color: #f00;
+    }
+  }
+
+}
+@mixin css($attr,$val){
+  -webkit-#{$attr} : $val;
+  -moz-#{$attr} : $val;
+  -ms-#{$attr} : $val;
+  -o-#{$attr} : $val;
+  #{$attr} : $val;
+}
+.bb{
+  @include css(border-radius,10px);
+  a{
+    color: #0f0;
+  }
+}
+.cc{
+  width: 200px;
+  height: 100px;
+  @extend .bb;
+}
+
+
+%ll{
+  background: #000;
+}
+.dd{
+  @extend %ll;
+}

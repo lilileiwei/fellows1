@@ -1,0 +1,29 @@
+body {
+  background: #eee; }
+  body #head {
+    width: 200px;
+    color: #eee; }
+  body .nav {
+    width: 200px; }
+  body a {
+    color: #eee; }
+    body a:hover {
+      color: #f00; }
+
+.bb, .cc {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px; }
+  .bb a, .cc a {
+    color: #0f0; }
+
+.cc {
+  width: 200px;
+  height: 100px; }
+
+.dd {
+  background: #000; }
+
+/*# sourceMappingURL=text.css.map */
